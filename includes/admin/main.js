@@ -1,4 +1,4 @@
-/* Copyright YouTube information Widget Plugin, by Samuel Elh ( sam at elegance-style.com ) */
+// Copyright YouTube information Widget Plugin, by Samuel Elh ( sam at elegance-style.com )
 
 $(document).ready(function(){
 
