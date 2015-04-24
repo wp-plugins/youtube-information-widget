@@ -5,7 +5,7 @@ Plugin Name: YouTube Information Widget
 Plugin URI: https://wordpress.org/plugins/youtube-information-widget
 Description: This plugin allows you to embed information about your YouTube channel, including the last uploads, popular uploads, channel statistics including subscribers count, views count, and the about information, and also, a subscribe button next to your channel icon. comes with a settings page where you can update your options.
 Author: Samuel Elh
-Version: 1.2.6.1
+Version: 1.2.6.2
 Author URI: http://profiles.wordpress.org/elhardoum/
 */
 
@@ -542,7 +542,7 @@ function ytio_widget() {
 
 <div id="ytio-container" style="padding: 1em;">
 	<h2>Please fill out a YouTube username or channel ID first </h2>
-	<sub> â€“ YouTube information widget plugin</sub>
+	<sub> Ã¢â‚¬â€œ YouTube information widget plugin</sub>
 </div>
 <br style="clear: both" />
 
