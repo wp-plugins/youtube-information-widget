@@ -7,7 +7,7 @@ Stable tag: 1.2.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Embeds into a widget information about your channel: last uploads, and statistics and summary.
+Embeds into a widget information about your channel: last uploads, popular uploads and statistics and summary.
 
 == Description ==
 
