@@ -1,7 +1,6 @@
 === YouTube information Widget ===
 Contributors: elhardoum
-Tags: cache, iframe, mobile, responsive,  shortcode, subscribe, sidebar,  video, 
-views, video player, wordpress, widget,  youtube, Youtube channel, youtube user, Youtube-video, youtube plugin
+Tags: cache, subscribe,  video, video player, widget,  youtube, Youtube channel, youtube user, Youtube-video, youtube plugin
 Requires at least: 3.0.1
 Tested up to: 4.2
 Stable tag: 1.2.6.1
