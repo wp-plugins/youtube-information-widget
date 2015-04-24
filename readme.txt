@@ -4,11 +4,11 @@ Tags: cache, iframe, mobile, responsive,  shortcode, subscribe, sidebar,  video,
 views, video player, wordpress, widget,  youtube, Youtube channel, youtube user, Youtube-video, youtube plugin
 Requires at least: 3.0.1
 Tested up to: 4.2
-Stable tag: 4.3
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Embed information about your YouTube channel, including the last uploads, popular uploads and channel summary and statistics ( about summary, subscribers count, views & comments count, total videos ) .
+Embeds into a widget information about your channel: last uploads, and statistics and summary.
 
 == Description ==
 
@@ -41,3 +41,6 @@ For more support questions, please visit the [support forum](http://wordpress.or
 
 = 1.0 =
 * Initial ( Beta ) release.
+
+= 1.1 =
+* fixed incoding issue.
