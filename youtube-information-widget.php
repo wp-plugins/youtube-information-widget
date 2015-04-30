@@ -5,14 +5,15 @@ Plugin Name: YouTube Information Widget
 Plugin URI: https://wordpress.org/plugins/youtube-information-widget
 Description: This plugin allows you to embed information about your YouTube channel, including the last uploads, popular uploads, channel statistics including subscribers count, views count, and the about information, and also, a subscribe button next to your channel icon. comes with a settings page where you can update your options.
 Author: Samuel Elh
-Version: 1.2.6.3
+Version: 1.2.6.4
 Author URI: http://profiles.wordpress.org/elhardoum/
 */
 
 add_action('admin_menu', 'ytio_create_menu');
 
 function ytio_create_menu() {
-	add_options_page( 'YouTube information widget settings', 'YouTube info widget', 'manage_options', 'ytio_settings', 'ytio_settings_page' );
+	global $ytio_settings_page;
+	$ytio_settings_page = add_options_page( 'YouTube information widget settings', 'YouTube info widget', 'manage_options', 'ytio_settings', 'ytio_settings_page' );
 	add_action( 'admin_init', 'register_ytio_settings' );
 }
 
@@ -166,8 +167,8 @@ function ytio_settings_page() {
 </fieldset>
 <fieldset style="border: 1px solid #D5D5D5; padding: 1em;margin-left: .5em;width: 42%;float: left;line-height: 2;">
 	<legend style="padding: 0 1em;font-weight: 600;text-decoration: underline;">Thanks!</legend>Thank you for using our plugin. You liked it? then rate it! we depened on your rating and reviews to improve the plugin.<br style="clear: both;">
-	<a href="https://wordpress.org/support/plugin/youtube-information-widget">Support forum on WordPress.org</a><br style="clear: both;"> 
-	<a href="https://wordpress.org/support/view/plugin-reviews/youtube-information-widget?rate=5#postform">Rate &amp; Review this plugin</a>
+	<a href="https://wordpress.org/support/plugin/youtube-information-widget">Support forum on WordPress.org &raquo;</a><br style="clear: both;"> 
+	<a href="https://wordpress.org/support/view/plugin-reviews/youtube-information-widget?rate=5#postform">Rate &amp; Review this plugin &raquo;</a>
 </fieldset>
 
 </div>
@@ -509,6 +510,8 @@ function ytio_enq_scripts() {
 	wp_enqueue_script('ytio-js-2');
 }
 
+
+
 add_action( 'wp_enqueue_scripts', 'ytio_enq_styles' );  
 
 function ytio_enq_styles() {
@@ -519,10 +522,13 @@ function ytio_enq_styles() {
 
 add_action( 'admin_enqueue_scripts', 'ytio_enq_admin_scripts' );
 
-function ytio_enq_admin_scripts() {
-	wp_register_script('ytio-admin-js-1', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array('jquery'),'1', true);
-	wp_register_script('ytio-admin-js-2', plugin_dir_url( __FILE__ ) . 'includes/main.js', array('jquery'),'1.0', true);
-	wp_register_script('ytio-admin-js-3', plugin_dir_url( __FILE__ ) . 'includes/admin/main.js', array('jquery'),'1.0', true);	
+function ytio_enq_admin_scripts($hook) {
+	global $ytio_settings_page;
+	if( $hook != $ytio_settings_page ) 
+		return;
+	wp_register_script( 'ytio-admin-js-1', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array('jquery') );
+	wp_register_script( 'ytio-admin-js-2', plugin_dir_url( __FILE__ ) . 'includes/main.js', array('jquery') );
+	wp_register_script( 'ytio-admin-js-3', plugin_dir_url( __FILE__ ) . 'includes/admin/main.js', array('jquery') );	
 	wp_enqueue_script('ytio-admin-js-1');
 	wp_enqueue_script('ytio-admin-js-2');
 	wp_enqueue_script('ytio-admin-js-3');
@@ -530,10 +536,26 @@ function ytio_enq_admin_scripts() {
 
 add_action( 'admin_enqueue_scripts', 'ytio_enq_admin_styles' );  
 
-function ytio_enq_admin_styles() {
+function ytio_enq_admin_styles($hook) {
+	global $ytio_settings_page;
+	if( $hook != $ytio_settings_page ) 
+		return;
     wp_enqueue_style('ytio-widget-css', plugin_dir_url( __FILE__ ) . 'includes/style.css' );
     wp_enqueue_style('ytio-admin-css', plugin_dir_url( __FILE__ ) . 'includes/admin/style.css' );
 }
+
+
+function hide_cache_menu_item() {
+?>
+<style type="text/css">
+a[href^="options-general.php?page=ytio_clear_cache"],
+a[href="options-general.php?page=ytio_clear_cache"] {
+    display: none!important;
+}
+</style>
+<?php
+}
+add_action( 'admin_head', 'hide_cache_menu_item' );
 
 function ytio_widget() {
 
@@ -542,7 +564,7 @@ function ytio_widget() {
 
 <div id="ytio-container" style="padding: 1em;">
 	<h2>Please fill out a YouTube username or channel ID first </h2>
-	<sub> Ã¢â‚¬â€œ YouTube information widget plugin</sub>
+	<sub> &mdash; YouTube information widget plugin</sub>
 </div>
 <br style="clear: both" />
 
