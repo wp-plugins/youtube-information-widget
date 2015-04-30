@@ -33,7 +33,7 @@ This plugin relies on <a href="https://developers.google.com/youtube/v3/">YouTub
 
 **Support:**
 
-Please post all of your support questions in the plugin <a href="http://wordpress.org/support/plugin/my-auction-creator">support forum</a>, or by forwarding your questions to this email address : sam at elegance-style.com
+Please post all of your support questions in the plugin <a href="http://wordpress.org/support/plugin/youtube-information-widget">support forum</a>, or by forwarding your questions to this email address : sam at elegance-style.com
 
 **Rate & Review:**
 
@@ -74,5 +74,5 @@ For more support questions, please visit the [support forum](http://wordpress.or
 = 1.1 =
 * fixed encoding issue.
 
-= 1.1 =
+= 1.2 =
 * Fixing wp.org plugin author related issues.
