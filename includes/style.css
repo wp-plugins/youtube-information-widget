@@ -12,6 +12,8 @@
 	display: block;
 	float: left;
 	max-width: 100%;
+	clear: both;
+	margin-bottom: 1em;
 }
 #ytio-container p {
 	padding: 0.2em;
@@ -95,11 +97,4 @@ a[href="options-general.php?page=ytio_clear_cache"] {
 	-webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #D0D2D1, 0 2px 5px 4px rgba(0,0,0,.2);      
 	-moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #D0D2D1, 0 2px 5px 4px rgba(0,0,0,.2);      
 	box-shadow: 0 0 0 3px #fff, 0 0 0 4px #D0D2D1, 0 2px 5px 4px rgba(0,0,0,.2);
-}
-
-@media screen and (max-width: 480px),
-@media only screen 
-  and (max-device-width: 480px),
-@media screen and (max-device-width: 480px)  {
-	/* object */
 }
