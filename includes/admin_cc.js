@@ -2,13 +2,13 @@
 
 $(document).ready(function(){
 
-	$('div[id*="_yiw_widget"] input[type="submit"]').click(function() {
-		$('div[id*="_yiw_widget"] input[type="submit"]').prop("disabled", "disabled");
+	$('div[id*="_liteyiw_widget"] input[type="submit"]').click(function() {
+		$('div[id*="_liteyiw_widget"] input[type="submit"]').prop("disabled", "disabled");
 		$.ajax({
 			url : "../wp-content/plugins/youtube-information-widget/includes/clear_cache.php",
 			type : "post",
 			success: function(){
-				$('div[id*="_yiw_widget"] input[type="submit"]').prop("disabled", false);
+				$('div[id*="_liteyiw_widget"] input[type="submit"]').prop("disabled", false);
 			}
 		})
 	})

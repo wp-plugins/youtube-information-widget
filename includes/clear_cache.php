@@ -20,9 +20,9 @@ $success = _e("YouTube Information Widget database cache is being cleared soon..
 $success .= $script;
 // adds option if not exists, otherwise updates
 if ( $force_update = '' ) {
-	add_option( 'yiw_force_update', '1' );
+	add_option( 'liteyiw_force_update', '1' );
 	echo $success;
 } else {
-	update_option( 'yiw_force_update', '1' );
+	update_option( 'liteyiw_force_update', '1' );
 	echo $success;
 }
